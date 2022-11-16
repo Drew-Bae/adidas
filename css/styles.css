@@ -35,7 +35,7 @@ html {
 body {
     font-family: "adineue_pro", Arial, Helvetica, sans-serif;
     color: #000;
-    background: pink;
+    background: #fff;
 }
 
 h1 {
@@ -644,7 +644,7 @@ button:hover {
 #cart {
     height: calc(100vh - 80px);
     width: 22vw;
-    background: rgb(255, 255, 255, 0.4);
+    background: rgb(255, 255, 255, 0);
     position: relative;
     margin-left: 78vw;
     margin-top: 80px;
@@ -760,4 +760,20 @@ button:hover {
     letter-spacing: 0.5px;
     position: absolute;
     bottom: 20px;
+}
+
+/* Banner */
+.banner {
+    position: absolute;
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+    width: 100vw;
+    background: #6f5853;
+    z-index: -1;
+}
+
+.bannerImage {
+
+    margin-top: 0.5%;
+    margin-left: 5vw;
 }
