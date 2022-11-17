@@ -89,3 +89,81 @@ function toggleCart() {
         x.style.display = "none";
     }
 }
+
+/* Banner */
+const slideGallery = document.querySelector('.slides');
+const slides = slideGallery.querySelectorAll('div');
+const thumbnailContainer = document.querySelector('.thumbnails');
+const slideCount = slides.length;
+const slideWidth = 1590;
+const bannerColor = document.querySelector(".banner");
+
+const highlightThumbnail = () => {
+  thumbnailContainer
+    .querySelectorAll('div.highlighted')
+    .forEach(el => el.classList.remove('highlighted'));
+  const index = Math.floor(slideGallery.scrollLeft / slideWidth);
+  thumbnailContainer
+    .querySelector(`div[data-id="${index}"]`)
+    .classList.add('highlighted');
+};
+
+const scrollToElement = el => {
+  const index = parseInt(el.dataset.id, 10);
+  slideGallery.scrollTo(index * slideWidth, 0);
+  console.log(el);
+};
+
+thumbnailContainer.innerHTML += [...slides]
+  .map((slide, i) => `<div data-id="${i}"></div>`)
+  .join('');
+
+thumbnailContainer.querySelectorAll('div').forEach(el => {
+  el.addEventListener('click', () => scrollToElement(el));
+});
+
+slideGallery.addEventListener('scroll', e => highlightThumbnail());
+
+highlightThumbnail();
+
+/* Change Banner Background */
+const a = document.querySelector(`div[data-id="${0}"]`);
+const b = document.querySelector(`div[data-id="${1}"]`);
+const c = document.querySelector(`div[data-id="${2}"]`);
+const d = document.querySelector(`div[data-id="${3}"]`);
+const e = document.querySelector(`div[data-id="${4}"]`);
+
+a.addEventListener('click', function changeBannera() {
+    if (a.classList.contains('highlighted') === true) {
+        bannerColor.style.background = "#7e221d";
+    }
+})
+b.addEventListener('click', function changeBannerb() {
+    bannerColor.style.background = "#1b4767";
+})
+c.addEventListener('click', function changeBannerb() {
+    bannerColor.style.background = "#a6cbb2";
+})
+d.addEventListener('click', function changeBannerb() {
+    bannerColor.style.background = "pink";
+})
+e.addEventListener('click', function changeBannerb() {
+    bannerColor.style.background = "#919191";
+})
+slideGallery.addEventListener('scroll', function changeBannerb() {
+    if (a.classList.contains('highlighted') === true) {
+        bannerColor.style.background = "#7e221d";
+    }
+    else if (b.classList.contains('highlighted') === true) {
+        bannerColor.style.background = "#1b4767";
+    }
+    else if (c.classList.contains('highlighted') === true) {
+        bannerColor.style.background = "#a6cbb2";
+    }
+    else if (d.classList.contains('highlighted') === true) {
+        bannerColor.style.background = "pink";
+    }
+    else if (e.classList.contains('highlighted') === true) {
+        bannerColor.style.background = "#919191";
+    }
+})
