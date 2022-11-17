@@ -95,7 +95,7 @@ const slideGallery = document.querySelector('.slides');
 const slides = slideGallery.querySelectorAll('div');
 const thumbnailContainer = document.querySelector('.thumbnails');
 const slideCount = slides.length;
-const slideWidth = 1590;
+const slideWidth = 1400;
 const bannerColor = document.querySelector(".banner");
 
 const highlightThumbnail = () => {
@@ -166,4 +166,25 @@ slideGallery.addEventListener('scroll', function changeBannerb() {
     else if (e.classList.contains('highlighted') === true) {
         bannerColor.style.background = "#919191";
     }
-})
+});
+
+/* Auto Click */
+function changeImage() {
+    if (a.classList.contains('highlighted') === true) {
+        b.click();
+    }
+    else if (b.classList.contains('highlighted') === true) {
+        c.click();
+    }
+    else if (c.classList.contains('highlighted') === true) {
+        d.click();
+    }
+    else if (d.classList.contains('highlighted') === true) {
+        e.click();
+    }
+    else if (e.classList.contains('highlighted') === true) {
+        a.click();
+    }
+};
+
+setInterval('changeImage();', 5000);
