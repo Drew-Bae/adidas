@@ -1,94 +1,139 @@
-/* Hero Variables */
-const button = document.querySelector('.hero');
-const leftCover = document.querySelector('.leftCover');
-const rightCover = document.querySelector('.rightCover');
-const cursor = document.querySelector('.circle');
+/* Toggle Nav */
+const collapsible = document.getElementById('collapsible');
+const collapsibleContent = document.getElementById('collapsible__content');
 
-/* Search Variables */
-const openSearch = document.querySelector('.searchIcon');
-const closeSearch = document.querySelector('.searchClose');
-
-/* Nav Variables */
-const openLogin = document.querySelector('.userIcon');
-const closeLogin = document.querySelector('.close');
-
-/* Main Variables */
-const main = document.querySelector('.main');
-
-/* After Hero */
-button.addEventListener('click', function handleClick() {
-    const changeRightCover = document.getElementById('DeleteRightCover');
-    const changeLeftCover = document.getElementById('DeleteLeftCover');
-    const deleteLogo = document.getElementById('adidas');
-
-    setTimeout(function() { button.classList.add('animate__animated', 'animate__bounceOut') }, 500);
-    leftCover.classList.add('animate__animated', 'animate__slideOutLeft');
-    rightCover.classList.add('animate__animated', 'animate__slideOutRight');
-    cursor.style.cursor = "default";
-
-    setTimeout(function() { button.classList.add('delete') }, 1400);
-    setTimeout(function() { leftCover.classList.add('delete') }, 1400);
-    setTimeout(function() { rightCover.classList.add('delete') }, 1400);
-
-    setTimeout(function() { changeRightCover.style.width = "0px" }, 1400);
-    setTimeout(function() { changeRightCover.style.border = "0" }, 1400);
-    setTimeout(function() { changeLeftCover.style.width = "0px" }, 1400);
-    setTimeout(function() { changeLeftCover.style.border = "0" }, 1400);
-    setTimeout(function() { deleteLogo.style.width = "0px" }, 1400);
-
-    setTimeout(function() { button.style.display = "unset" }, 1400);
-    setTimeout(function() { main.style.position = "unset" }, 1400);
-    setTimeout(function() { main.style.top = "unset" }, 1400);
-});
-
-/* Search */
-/* BUG DOES NOT WORK THE SECOND TIME */
-openSearch.addEventListener('click', function handleClick() {
-    var element = document.getElementById('search');
-    if (element.style.height == 0) {
-        element.style.height = "60px";
-    } else {
-        element.style.height = 0;
+collapsible.addEventListener("click", function() {
+    if (collapsibleContent.classList.contains('collapsible--expanded') === false) {
+        collapsible.setAttribute("style", "box-shadow: 0 0 0 3px #666; border-radius: 5px;");
+        collapsibleContent.setAttribute("style", "max-height: 100vh; opacity: 1;")
+        collapsibleContent.classList.add('collapsible--expanded');
+    }
+    else if (collapsibleContent.classList.contains('collapsible--expanded') === true) {
+        collapsible.setAttribute("style", "inital; border-radius: inital;");
+        collapsibleContent.setAttribute("style", "max-height: 0vh; opacity: 0;")
+        collapsibleContent.classList.remove('collapsible--expanded');
     }
 });
 
-/*
-openSearch.addEventListener('click', function handleClick() {
-    const searchSection = document.getElementById('search');
-    
-    searchSection.style.height = "60px";
-});
+/* Toggle Mobile Search */
+const mobileSearchCollapsible = document.getElementById('searchIcon');
+const mobileSearchCollapsibleContent = document.getElementById('mobileSearch');
 
-closeSearch.addEventListener('click', function handleExitClick() {
-    const searchSection = document.getElementById('search');
-
-    searchSection.style.height = "0";
-})
-*/
-
-/* Login */
-openLogin.addEventListener('click', function handleClick() {
-    const loginSection = document.getElementById('login');
-
-    loginSection.style.width = "22%";
-});
-
-closeLogin.addEventListener('click', function handleExitClick() {
-    const loginSection = document.getElementById('login');
-
-    loginSection.style.width = "0%";
-});
-
-/* Cart */
-function toggleCart() {
-    var x = document.getElementById("cart");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+mobileSearchCollapsible.addEventListener("click", function() {
+    if (window.innerWidth <= 768) {
+        if (mobileSearchCollapsible.classList.contains('x') === false) {
+            mobileSearchCollapsibleContent.setAttribute("style", "display: block");
+            mobileSearchCollapsible.classList.add('x');
+        }
+        else if (mobileSearchCollapsible.classList.contains('x') === true) {
+            mobileSearchCollapsibleContent.setAttribute("style", "display: none");
+            mobileSearchCollapsible.classList.remove('x');
+        }
     }
-    else {
-        x.style.display = "none";
+});
+
+/* Toggle Web-User's Search */
+const webSearchCollapsible = document.getElementById('searchIcon');
+const webSearchCollapsibleContent = document.getElementById('webSearch');
+
+webSearchCollapsible.addEventListener("click", function() {
+    if (window.innerWidth > 768) {
+        if (webSearchCollapsible.classList.contains('x') === false) {
+            webSearchCollapsibleContent.setAttribute("style", "display: block");
+            webSearchCollapsible.classList.add('x');
+        }
+        else if (webSearchCollapsible.classList.contains('x') === true) {
+            webSearchCollapsibleContent.setAttribute("style", "display: none");
+            webSearchCollapsible.classList.remove('x');
+        }
     }
-}
+});
+
+/* Toggle Mobile User */
+const mobileUserCollapsible = document.getElementById('userIcon');
+const mobileUserCollapsibleContent = document.getElementById('login');
+const mobileUserClose = document.getElementById('close');
+const body = document.getElementById('body');
+const nav = document.getElementById('nav');
+
+mobileUserCollapsible.addEventListener("click", function() {
+    if (mobileUserCollapsible.classList.contains('x') === false) {
+        mobileUserCollapsibleContent.setAttribute("style", "display: block");
+        nav.setAttribute("style", "background: rgba(0, 0, 0, 0.006)");
+        body.setAttribute("style", "background: rgba(0, 0, 0, 0.4)");
+        mobileUserCollapsible.classList.add('x');
+    }
+    mobileUserClose.addEventListener("click", function() {
+        mobileUserCollapsibleContent.setAttribute("style", "display: none");
+        body.setAttribute("style", "background: inital");
+        nav.setAttribute("style", "background: inital");
+        mobileUserCollapsible.classList.remove('x');
+    });
+});
+
+/* Toggle Cart */
+const webCartCollapsible = document.getElementById('cartIcon');
+const webCartCollapsibleContent = document.getElementById('webCart');
+
+webCartCollapsible.addEventListener("click", function() {
+    if (window.innerWidth > 768) {
+        if (webCartCollapsible.classList.contains('x') === false) {
+            webCartCollapsibleContent.setAttribute("style", "display: block");
+            webCartCollapsible.classList.add('x');
+        }
+        else if (webCartCollapsible.classList.contains('x') === true) {
+            webCartCollapsibleContent.setAttribute("style", "display: none");
+            webCartCollapsible.classList.remove('x');
+        }
+    }
+});
+
+/* Dropdown Menu */
+const menDropShow = document.getElementById('mobileMen');
+const menDropShowContent = document.getElementById('mobileMenShow');
+const womenDropShow = document.getElementById('mobileWomen');
+const womenDropShowContent = document.getElementById('mobileWomenShow');
+const kidsDropShow = document.getElementById('mobileKids');
+const kidsDropShowContent = document.getElementById('mobileKidsShow');
+
+menDropShow.addEventListener("click", function() {
+    if (window.innerWidth <= 768) {
+        if (menDropShow.classList.contains('mobileDropDown') === false) {
+            menDropShowContent.setAttribute("style", "display: block;");
+            menDropShow.classList.add('mobileDropDown');
+        }
+        else if (menDropShow.classList.contains('mobileDropDown') === true) {
+            menDropShowContent.setAttribute("style", "display: none;");
+            menDropShow.classList.remove('mobileDropDown');
+        }
+    }
+}); 
+
+womenDropShow.addEventListener("click", function() {
+    if (window.innerWidth <= 768) {
+        if (womenDropShow.classList.contains('mobileDropDown') === false) {
+            womenDropShowContent.setAttribute("style", "display: block;");
+            womenDropShow.classList.add('mobileDropDown');
+        }
+        else if (womenDropShow.classList.contains('mobileDropDown') === true) {
+            womenDropShowContent.setAttribute("style", "display: none;");
+            womenDropShow.classList.remove('mobileDropDown');
+        }
+    }
+}); 
+
+kidsDropShow.addEventListener("click", function() {
+    if (window.innerWidth <= 768) {
+        if (kidsDropShow.classList.contains('mobileDropDown') === false) {
+            kidsDropShowContent.setAttribute("style", "display: block;");
+            kidsDropShow.classList.add('mobileDropDown');
+        }
+        else if (kidsDropShow.classList.contains('mobileDropDown') === true) {
+            kidsDropShowContent.setAttribute("style", "display: none;");
+            kidsDropShow.classList.remove('mobileDropDown');
+        }
+    }
+}); 
 
 /* Banner */
 const slideGallery = document.querySelector('.slides');
@@ -126,49 +171,13 @@ slideGallery.addEventListener('scroll', e => highlightThumbnail());
 
 highlightThumbnail();
 
-/* Change Banner Background */
+/* Auto Click */
 const a = document.querySelector(`div[data-id="${0}"]`);
 const b = document.querySelector(`div[data-id="${1}"]`);
 const c = document.querySelector(`div[data-id="${2}"]`);
 const d = document.querySelector(`div[data-id="${3}"]`);
 const e = document.querySelector(`div[data-id="${4}"]`);
 
-a.addEventListener('click', function changeBannera() {
-    if (a.classList.contains('highlighted') === true) {
-        bannerColor.style.background = "#7e221d";
-    }
-})
-b.addEventListener('click', function changeBannerb() {
-    bannerColor.style.background = "#1b4767";
-})
-c.addEventListener('click', function changeBannerb() {
-    bannerColor.style.background = "#a6cbb2";
-})
-d.addEventListener('click', function changeBannerb() {
-    bannerColor.style.background = "pink";
-})
-e.addEventListener('click', function changeBannerb() {
-    bannerColor.style.background = "#919191";
-})
-slideGallery.addEventListener('scroll', function changeBannerb() {
-    if (a.classList.contains('highlighted') === true) {
-        bannerColor.style.background = "#7e221d";
-    }
-    else if (b.classList.contains('highlighted') === true) {
-        bannerColor.style.background = "#1b4767";
-    }
-    else if (c.classList.contains('highlighted') === true) {
-        bannerColor.style.background = "#a6cbb2";
-    }
-    else if (d.classList.contains('highlighted') === true) {
-        bannerColor.style.background = "pink";
-    }
-    else if (e.classList.contains('highlighted') === true) {
-        bannerColor.style.background = "#919191";
-    }
-});
-
-/* Auto Click */
 function changeImage() {
     if (a.classList.contains('highlighted') === true) {
         b.click();
