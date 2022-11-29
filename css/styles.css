@@ -802,7 +802,7 @@ button:hover {
 .banner {
     position: relative;
     margin-top: 80px;
-    height: 35vh;
+    height: 32vh;
     width: 100vw;
     z-index: -2;
 }
@@ -817,7 +817,7 @@ video {
 
 .thumbnails {
     position: absolute;
-    bottom: 25px;
+    bottom: 5px;
     display: flex;
     flex-direction: row;
     gap: 6px;
@@ -948,5 +948,80 @@ video {
       
       .slides::-webkit-scrollbar {
         display: none;
+    }
+}
+
+/* Recently Viewed */
+.recent h1 {
+    margin-top: 25px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+.scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.recentCard {
+    flex: 0 0 auto;
+    height: 200px;
+    width: 200px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5%;
+}
+
+.recentCard h2 {
+    font-size: 16px;
+    margin-top: 170px;
+}
+
+.shoe1 {
+    background-image: url(/images/shoe.webp);
+    background-size: 200px;
+}
+
+.shoe2 {
+    background-image: url(/images/shoe2.webp);
+    background-size: 200px;
+}
+
+@media screen and (min-width: 768px) {
+    .recent h1 {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-size: 50px;
+    }
+
+    .scrolling-wrapper {
+        justify-content: center;
+    }
+
+    .recentCard {
+        height: 300px;
+        width: 300px;
+        cursor: pointer;
+    }    
+
+    .recentCard h2 {
+        font-size: 30px;
+        margin-top: 255px;
+    }
+    
+    .shoe1 {
+        background-image: url(/images/shoe.webp);
+        background-size: 300px;
+    }
+    
+    .shoe2 {
+        background-image: url(/images/shoe2.webp);
+        background-size: 300px;
     }
 }
