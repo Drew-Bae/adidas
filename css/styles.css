@@ -386,16 +386,17 @@ button:hover {
         width: initial;
         margin-top: initial;
         border-top: initial;
+        border-bottom: 1px solid #edeef0;
     }
     
     .menDropdown:hover {
-        background-color: #f7f7f7;
+        background-color: #edeef0;
     }
     
     .menDropdownContent {
         display: none;
         position: absolute;
-        background-color: #f4f4f4;
+        background-color: #edeef0;
         left: 0;
         top: 80px;
         width: 100%;
@@ -419,16 +420,17 @@ button:hover {
         padding-bottom: 25px;
         border: none;
         width: initial;
+        border-bottom: 1px solid #edeef0;
     }
     
     .womenDropdown:hover {
-        background-color: #f7f7f7;
+        background-color: #edeef0;
     }
     
     .womenDropdownContent {
         display: none;
         position: absolute;
-        background-color: #f4f4f4;
+        background-color: #edeef0;
         left: 0;
         top: 80px;
         width: 100%;
@@ -452,16 +454,17 @@ button:hover {
         padding-bottom: 25px;
         border: none;
         width: initial;
+        border-bottom: 1px solid #edeef0;
     }
     
     .kidsDropdown:hover {
-        background-color: #f7f7f7;
+        background-color: #edeef0;
     }
     
     .kidsDropdownContent {
         display: none;
         position: absolute;
-        background-color: #f4f4f4;
+        background-color: #edeef0;
         left: 0;
         top: 80px;
         width: 100%;
@@ -475,7 +478,7 @@ button:hover {
     .column {
         float: left;
         width: 15%;
-        background-color: #f4f4f4;
+        background-color: #edeef0;
         height:fit-content;
         margin-top: 2%;
         margin-bottom: 2%;
@@ -972,14 +975,36 @@ video {
     width: 200px;
     margin-left: 10px;
     margin-right: 10px;
-    text-align: center;
+    text-align: left;
     border: 2px solid black;
     border-radius: 5%;
 }
 
 .recentCard h2 {
+    text-align: center;
     font-size: 16px;
-    margin-top: 170px;
+    margin-top: 120px;
+}
+
+.recentCard p {
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    width: 54px;
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-top: 4px;
+    border: 1px solid #fff;
+    border-radius: 25%;
+    background-color: #fff;
+}
+
+.heart {
+    display: inline-block;
+    color: grey;
+    margin-top: 8px;
+    margin-left: 95px;
 }
 
 .shoe1 {
@@ -992,10 +1017,20 @@ video {
     background-size: 200px;
 }
 
+.shoe3 {
+    background-image: url(/images/shoe3.webp);
+    background-size: 200px;
+}
+
+.shoe4 {
+    background-image: url(/images/shoe4.webp);
+    background-size: 200px;
+}
+
 @media screen and (min-width: 768px) {
     .recent h1 {
-        margin-top: 60px;
-        margin-bottom: 20px;
+        margin-top: 40px;
+        margin-bottom: 30px;
         margin-left: 20px;
         font-size: 50px;
     }
@@ -1012,7 +1047,30 @@ video {
 
     .recentCard h2 {
         font-size: 30px;
-        margin-top: 255px;
+        margin-top: 195px;
+    }
+
+    .recentCard p {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+        width: 70px;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding-top: 4px;
+        border: 1px solid #fff;
+        border-radius: 25%;
+        background-color: #fff;
+    }
+
+    .heart {
+        display: inline-block;
+        font-size: 30px;
+        margin-top: 8px;
+        margin-left: 175px;
+    }
+
+    .heart:hover {
+        color: red;
     }
     
     .shoe1 {
@@ -1022,6 +1080,16 @@ video {
     
     .shoe2 {
         background-image: url(/images/shoe2.webp);
+        background-size: 300px;
+    }
+
+    .shoe3 {
+        background-image: url(/images/shoe3.webp);
+        background-size: 300px;
+    }
+
+    .shoe4 {
+        background-image: url(/images/shoe4.webp);
         background-size: 300px;
     }
 }

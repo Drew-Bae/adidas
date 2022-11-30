@@ -209,3 +209,17 @@ function changeImage() {
 };
 
 setInterval('changeImage();', 5000);
+
+/* Recent Products */
+const heart = document.querySelector('.heart');
+
+heart.addEventListener("click", function() {
+    if (heart.classList.contains('x') === false) {
+        heart.setAttribute("style", "color: red;");
+        heart.classList.add('x');
+    }
+    else if (heart.classList.contains('x') === true) {
+        heart.setAttribute("style", "color: grey;");
+        heart.classList.remove('x');
+    }
+}); 
