@@ -1,16 +1,20 @@
 /* Toggle Nav */
 const collapsible = document.getElementById('collapsible');
 const collapsibleContent = document.getElementById('collapsible__content');
+const nav1 = document.getElementById('nav');
 
+nav1.setAttribute("style", "height: 70px");
 collapsible.addEventListener("click", function() {
     if (collapsibleContent.classList.contains('collapsible--expanded') === false) {
         collapsible.setAttribute("style", "box-shadow: 0 0 0 3px #666; border-radius: 5px;");
-        collapsibleContent.setAttribute("style", "max-height: 100vh; opacity: 1;")
+        collapsibleContent.setAttribute("style", "max-height: 100vh; opacity: 1;");
+        nav1.setAttribute("style", "height: inital");
         collapsibleContent.classList.add('collapsible--expanded');
     }
     else if (collapsibleContent.classList.contains('collapsible--expanded') === true) {
         collapsible.setAttribute("style", "inital; border-radius: inital;");
-        collapsibleContent.setAttribute("style", "max-height: 0vh; opacity: 0;")
+        collapsibleContent.setAttribute("style", "max-height: 0vh; opacity: 0;");
+        nav1.setAttribute("style", "height: 70px");
         collapsibleContent.classList.remove('collapsible--expanded');
     }
 });
@@ -211,15 +215,69 @@ function changeImage() {
 setInterval('changeImage();', 5000);
 
 /* Recent Products */
-const heart = document.querySelector('.heart');
+const heart = document.getElementById('duramo');
+const heart1 = document.getElementById('TRX');
+const heart2 = document.getElementById('NMD');
+const heart3 = document.getElementById('campus');
+const heart4 = document.getElementById('Samba');
+const heart5 = document.getElementById('Mexico');
+const heart6 = document.getElementById('Ultraboost');
+const heart7 = document.getElementById('World');
+const heart8 = document.getElementById('NMD2');
+const heart9 = document.getElementById('Trefoil');
+const heart10 = document.getElementById('Adicolor');
+const heart11 = document.getElementById('Allover');
+const heart12 = document.getElementById('Disney');
+const heart13 = document.getElementById('Ultraboost2');
+const heart14 = document.getElementById('Big');
+const heart15 = document.getElementById('Running');
+const heart16 = document.getElementById('Terrex');
+const heart17 = document.getElementById('Crewneck');
+const heart18 = document.getElementById('Mock');
 
-heart.addEventListener("click", function() {
-    if (heart.classList.contains('x') === false) {
-        heart.setAttribute("style", "color: red;");
-        heart.classList.add('x');
+
+const arrayHeart = [heart, heart1, heart2, heart3, heart4, heart5, heart6, heart7, heart8, heart9,
+     heart10, heart11, heart12, heart13, heart14, heart15, heart16, heart17, heart18];
+
+for (const i of arrayHeart ) {
+    i.addEventListener("click", function() {
+        if (i.classList.contains('x') === false) {
+            i.setAttribute("style", "color: red;");
+            i.classList.add('x');
+        }
+        else if (i.classList.contains('x') === true) {
+            i.setAttribute("style", "color: grey;");
+            i.classList.remove('x');
+        }
+    });
+}
+
+/* New, Trending, & Member Products */
+const newProduct = document.getElementById('newProduct');
+const memberProduct = document.getElementById('memberProduct');
+const newScroll = document.getElementById('newScroll');
+const memberScroll = document.getElementById('memberScroll');
+
+newProduct.addEventListener("click", function() {
+    if (newProduct.classList.contains('selected') === false) {
+        newProduct.setAttribute("style", "background-color: #e0e0e0;");
+        memberProduct.setAttribute("style", "background-color: inital");
+        newProduct.classList.add('selected');
+        memberProduct.classList.remove('selected');
+
+        newScroll.setAttribute("style", "display: flex");
+        memberScroll.setAttribute("style", "display: none");
     }
-    else if (heart.classList.contains('x') === true) {
-        heart.setAttribute("style", "color: grey;");
-        heart.classList.remove('x');
+});
+
+memberProduct.addEventListener("click", function() {
+    if (memberProduct.classList.contains('selected') === false) {
+        newProduct.setAttribute("style", "background-color: white");
+        memberProduct.setAttribute("style", "background-color: #e0e0e0");
+        newProduct.classList.remove('selected');
+        memberProduct.classList.add('selected');
+
+        newScroll.setAttribute("style", "display: none");
+        memberScroll.setAttribute("style", "display: flex");
     }
-}); 
+});

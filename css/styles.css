@@ -62,7 +62,7 @@ header {
 .nav {
     background: #fff;
     position: fixed;
-    display: flex;
+    display: flex;  
 }
 
 .navBrand {
@@ -398,7 +398,7 @@ button:hover {
         position: absolute;
         background-color: #edeef0;
         left: 0;
-        top: 80px;
+        top: 70px;
         width: 100%;
         z-index: 1;
     }
@@ -432,7 +432,7 @@ button:hover {
         position: absolute;
         background-color: #edeef0;
         left: 0;
-        top: 80px;
+        top: 70px;
         width: 100%;
         z-index: 1;
     }
@@ -466,7 +466,7 @@ button:hover {
         position: absolute;
         background-color: #edeef0;
         left: 0;
-        top: 80px;
+        top: 70px;
         width: 100%;
         z-index: 1;
     }
@@ -685,7 +685,7 @@ button:hover {
         background: #fff;
         position: relative;
         margin-left: 78vw;
-        margin-top: 80px;
+        margin-top: 70px;
         display: none;
     }
 
@@ -956,9 +956,9 @@ video {
 
 /* Recently Viewed */
 .recent h1 {
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 28px;
 }
 
@@ -1090,6 +1090,319 @@ video {
 
     .shoe4 {
         background-image: url(/images/shoe4.webp);
+        background-size: 300px;
+    }
+}
+
+/* Menu */
+.menu {
+    background-color: #000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menuBtn:first-child {
+    margin-top: 20px;
+}
+
+.menuBtn {
+    width: 90vw;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #edeef0;
+    cursor: pointer;
+}
+
+.menMenuBtn {
+    background-image: url(/images/hoodie.webp);
+    background-repeat: no-repeat;
+    background-size: 275px;
+    background-position-x: -20%;
+    background-position-y: 25%;
+    text-align: right;
+    padding-right: 50px;
+}
+
+.womenMenuBtn {
+    background-image: url(/images/womanBtn.webp);
+    background-repeat: no-repeat;
+    background-size: 275px;
+    background-position-x: 120%;
+    background-position-y: 25%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.kidsMenuBtn {
+    background-image: url(/images/kidsBtn2.webp);
+    background-repeat: no-repeat;
+    background-size: 275px;
+    background-position-x: -20%;
+    background-position-y: 11%;
+    text-align: right;
+    padding-right: 50px;
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    .menuBtn {
+        height: 250px;
+        width: 30vw;
+        padding: initial;
+        margin-bottom: initial;
+        background-color: #edeef0;
+        font-size: 30px;
+    }
+
+    .menMenuBtn {
+        background-image: url(/images/hoodie.webp);
+        background-repeat: no-repeat;
+        background-size: 275px;
+        background-position-x: 10%;
+        background-position-y: 25%;
+        text-align: right;
+        padding-right: 100px;
+        margin-right: 20px;
+    }
+    
+    .womenMenuBtn {
+        background-image: url(/images/womanBtn.webp);
+        background-repeat: no-repeat;
+        background-size: 275px;
+        background-position-x: 90%;
+        background-position-y: 25%;
+        text-align: left;
+        padding-left: 100px;
+        margin-right: 20px;
+    }
+    
+    .kidsMenuBtn {
+        background-image: url(/images/kidsBtn2.webp);
+        background-repeat: no-repeat;
+        background-size: 275px;
+        background-position-x: 10%;
+        background-position-y: 11%;
+        text-align: right;
+        padding-right: 100px;
+    }
+}
+
+/* tabs */
+.tabsHeading {
+    display: flex;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 2px solid #e0e0e0;
+    border-bottom: 2px solid #e0e0e0;
+    justify-content: space-evenly;
+}
+
+.tabs h1 {
+    margin-top: 1px;
+    margin-left: 10px;
+    margin-bottom: 1px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'adineue_light', Arial, Helvetica, sans-serif;
+}
+
+.tabs h1:first-of-type {
+    margin-right: 5px;
+}
+
+.tabs .scrolling-wrapper h2 {
+    color: darkorange;
+}
+
+#newProduct {
+    background-color: #e0e0e0;
+}
+
+#memberScroll {
+    display: none;
+}
+
+.new1 {
+    background-image: url(/images/new1.webp);
+    background-size: 200px;
+}
+
+.new2 {
+    background-image: url(/images/new2.webp);
+    background-size: 200px;
+}
+
+.new3 {
+    background-image: url(/images/new3.webp);
+    background-size: 200px;
+}
+
+.new4 {
+    background-image: url(/images/new4.webp);
+    background-size: 200px;
+}
+
+.new5 {
+    background-image: url(/images/new5.webp);
+    background-size: 200px;
+}
+
+.new6 {
+    background-image: url(/images/new6.webp);
+    background-size: 200px;
+}
+
+.new7 {
+    background-image: url(/images/new7.webp);
+    background-size: 200px;
+}
+
+.new8 {
+    background-image: url(/images/new8.webp);
+    background-size: 200px;
+}
+
+.member1 {
+    background-image: url(/images/member1.webp);
+    background-size: 200px;
+}
+
+.member2 {
+    background-image: url(/images/member2.webp);
+    background-size: 200px;
+}
+
+.member3 {
+    background-image: url(/images/member3.webp);
+    background-size: 200px;
+}
+
+.member4 {
+    background-image: url(/images/member4.webp);
+    background-size: 200px;
+}
+
+.member5 {
+    background-image: url(/images/member5.webp);
+    background-size: 200px;
+}
+
+.member6 {
+    background-image: url(/images/member6.webp);
+    background-size: 200px;
+}
+
+.member7 {
+    background-image: url(/images/member7.webp);
+    background-size: 200px;
+}
+
+.member8 {
+    background-image: url(/images/member8.webp);
+    background-size: 200px;
+}
+
+@media screen and (min-width: 768px) {
+    .tabs h1 {
+        margin-top: 1px;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .tabs .scrolling-wrapper {
+        justify-content: initial;
+    }
+
+    .tabs .scrolling-wrapper h2 {
+        font-size: 25px;
+    }
+
+    .new1 {
+        background-image: url(/images/new1.webp);
+        background-size: 300px;
+    }
+    
+    .new2 {
+        background-image: url(/images/new2.webp);
+        background-size: 300px;
+    }
+    
+    .new3 {
+        background-image: url(/images/new3.webp);
+        background-size: 300px;
+    }
+    
+    .new4 {
+        background-image: url(/images/new4.webp);
+        background-size: 300px;
+    }
+    
+    .new5 {
+        background-image: url(/images/new5.webp);
+        background-size: 300px;
+    }
+    
+    .new6 {
+        background-image: url(/images/new6.webp);
+        background-size: 300px;
+    }
+    
+    .new7 {
+        background-image: url(/images/new7.webp);
+        background-size: 300px;
+    }
+    
+    .new8 {
+        background-image: url(/images/new8.webp);
+        background-size: 300px;
+    }
+
+    .member1 {
+        background-image: url(/images/member1.webp);
+        background-size: 300px;
+    }
+    
+    .member2 {
+        background-image: url(/images/member2.webp);
+        background-size: 300px;
+    }
+    
+    .member3 {
+        background-image: url(/images/member3.webp);
+        background-size: 300px;
+    }
+    
+    .member4 {
+        background-image: url(/images/member4.webp);
+        background-size: 300px;
+    }
+    
+    .member5 {
+        background-image: url(/images/member5.webp);
+        background-size: 300px;
+    }
+    
+    .member6 {
+        background-image: url(/images/member6.webp);
+        background-size: 300px;
+    }
+    
+    .member7 {
+        background-image: url(/images/member7.webp);
+        background-size: 300px;
+    }
+    
+    .member8 {
+        background-image: url(/images/member8.webp);
         background-size: 300px;
     }
 }
