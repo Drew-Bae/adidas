@@ -1,141 +1,151 @@
-/* Toggle Nav */
-const collapsible = document.getElementById('collapsible');
-const collapsibleContent = document.getElementById('collapsible__content');
-const nav1 = document.getElementById('nav');
+/* Mobile Nav (Open/Close) */
+const toggleMobileNavOpen = document.getElementById('collapsible');
+const toggleMobileNavClose = document.getElementById('nav-greyarea');
+const mobileNavContainer = document.getElementById('nav-mobile-container');
 
-nav1.setAttribute("style", "height: 70px");
-collapsible.addEventListener("click", function() {
-    if (collapsibleContent.classList.contains('collapsible--expanded') === false) {
-        collapsible.setAttribute("style", "box-shadow: 0 0 0 3px #666; border-radius: 5px;");
-        collapsibleContent.setAttribute("style", "max-height: 100vh; opacity: 1;");
-        nav1.setAttribute("style", "height: inital");
-        collapsibleContent.classList.add('collapsible--expanded');
+toggleMobileNavOpen.addEventListener("click", function() {
+    mobileNavContainer.setAttribute("style", "width: 100vw");
+});
+
+toggleMobileNavClose.addEventListener("click", function() {
+    mobileNavContainer.setAttribute("style", "width: 0");
+});
+
+/* Mobile Nav (Switch To Section) */
+const mobileNav = document.getElementById('nav-mobile');
+const toggleMenSectionOpen = document.getElementById('toggle-men-section-open');
+const toggleMenSectionClose = document.getElementById('toggle-men-section-close');
+const mobileMenSection = document.getElementById('nav-men-section');
+
+const toggleWomenSectionOpen = document.getElementById('toggle-women-section-open');
+const toggleWomenSectionClose = document.getElementById('toggle-women-section-close');
+const mobileWomenSection = document.getElementById('nav-women-section');
+
+const toggleKidsSectionOpen = document.getElementById('toggle-kids-section-open');
+const toggleKidsSectionClose = document.getElementById('toggle-kids-section-close');
+const mobileKidsSection = document.getElementById('nav-kids-section');
+
+const toggleGiftsSectionOpen = document.getElementById('toggle-gifts-section-open');
+const toggleGiftsSectionClose = document.getElementById('toggle-gifts-section-close');
+const mobileGiftsSection = document.getElementById('nav-gifts-section');
+
+const toggle3SectionOpen = document.getElementById('toggle-3-section-open');
+const toggle3SectionClose = document.getElementById('toggle-3-section-close');
+const mobile3Section = document.getElementById('nav-3-section');
+
+const toggleSaleSectionOpen = document.getElementById('toggle-sale-section-open');
+const toggleSaleSectionClose = document.getElementById('toggle-sale-section-close');
+const mobileSaleSection = document.getElementById('nav-sale-section');
+
+toggleMenSectionOpen.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 0");
+    mobileMenSection.setAttribute("style", "width: 80vw");
+});
+
+toggleMenSectionClose.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 80vw");
+    mobileMenSection.setAttribute("style", "width: 0");
+});
+
+toggleWomenSectionOpen.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 0");
+    mobileWomenSection.setAttribute("style", "width: 80vw");
+});
+
+toggleWomenSectionClose.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 80vw");
+    mobileWomenSection.setAttribute("style", "width: 0");
+});
+
+toggleKidsSectionOpen.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 0");
+    mobileKidsSection.setAttribute("style", "width: 80vw");
+});
+
+toggleKidsSectionClose.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 80vw");
+    mobileKidsSection.setAttribute("style", "width: 0");
+});
+
+toggleGiftsSectionOpen.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 0");
+    mobileGiftsSection.setAttribute("style", "width: 80vw");
+});
+
+toggleGiftsSectionClose.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 80vw");
+    mobileGiftsSection.setAttribute("style", "width: 0");
+});
+
+toggle3SectionOpen.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 0");
+    mobile3Section.setAttribute("style", "width: 80vw");
+});
+
+toggle3SectionClose.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 80vw");
+    mobile3Section.setAttribute("style", "width: 0");
+});
+
+toggleSaleSectionOpen.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 0");
+    mobileSaleSection.setAttribute("style", "width: 80vw");
+});
+
+toggleSaleSectionClose.addEventListener("click", function() {
+    mobileNav.setAttribute("style", "width: 80vw");
+    mobileSaleSection.setAttribute("style", "width: 0");
+});
+
+/* Nav Appear and Disappear on Scroll */
+const scrollNav = document.getElementById('header');
+let lastScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+    if (lastScrollY < window.scrollY) {
+        scrollNav.setAttribute("style", "display: none");
     }
-    else if (collapsibleContent.classList.contains('collapsible--expanded') === true) {
-        collapsible.setAttribute("style", "inital; border-radius: inital;");
-        collapsibleContent.setAttribute("style", "max-height: 0vh; opacity: 0;");
-        nav1.setAttribute("style", "height: 70px");
-        collapsibleContent.classList.remove('collapsible--expanded');
+    else {
+        scrollNav.setAttribute("style", "display: block");
+    }
+
+    lastScrollY = window.scrollY;
+});
+
+/* Login (Open/Close) */
+const toggleLoginOpen = document.getElementById('loginLogo');
+const toggleLoginClose = document.getElementById('close');
+const loginSection = document.getElementById('login');
+
+toggleLoginOpen.addEventListener("click", function() {
+    loginSection.setAttribute("style", "display: block");
+});
+
+toggleLoginClose.addEventListener("click", function() {
+    loginSection.setAttribute("style", "display: none");
+});
+
+/* Search (Open/Close) */
+const toggleSearchOpen = document.getElementById('searchLogo');
+const toggleSEarchClose = document.getElementById('toggleSearchClose');
+const searchSection = document.getElementById('search');
+
+toggleSearchOpen.addEventListener("click", function() {
+    if (toggleSearchOpen.classList.contains('x') === false) {
+        searchSection.setAttribute("style", "display: block");
+        toggleSearchOpen.classList.add('x');
+    }
+
+    else if (toggleSearchOpen.classList.contains('x') === true) {
+        searchSection.setAttribute("style", "display: none");
+        toggleSearchOpen.classList.remove('x');
     }
 });
 
-/* Toggle Mobile Search */
-const mobileSearchCollapsible = document.getElementById('searchIcon');
-const mobileSearchCollapsibleContent = document.getElementById('mobileSearch');
-
-mobileSearchCollapsible.addEventListener("click", function() {
-    if (window.innerWidth <= 768) {
-        if (mobileSearchCollapsible.classList.contains('x') === false) {
-            mobileSearchCollapsibleContent.setAttribute("style", "display: block");
-            mobileSearchCollapsible.classList.add('x');
-        }
-        else if (mobileSearchCollapsible.classList.contains('x') === true) {
-            mobileSearchCollapsibleContent.setAttribute("style", "display: none");
-            mobileSearchCollapsible.classList.remove('x');
-        }
-    }
+toggleSEarchClose.addEventListener("click", function() {
+    searchSection.setAttribute("style", "display: none");
+    searchSection.classList.remove('x');
 });
-
-/* Toggle Web-User's Search */
-const webSearchCollapsible = document.getElementById('searchIcon');
-const webSearchCollapsibleContent = document.getElementById('webSearch');
-
-webSearchCollapsible.addEventListener("click", function() {
-    if (window.innerWidth > 768) {
-        if (webSearchCollapsible.classList.contains('x') === false) {
-            webSearchCollapsibleContent.setAttribute("style", "display: block");
-            webSearchCollapsible.classList.add('x');
-        }
-        else if (webSearchCollapsible.classList.contains('x') === true) {
-            webSearchCollapsibleContent.setAttribute("style", "display: none");
-            webSearchCollapsible.classList.remove('x');
-        }
-    }
-});
-
-/* Toggle User */
-const mobileUserCollapsible = document.getElementById('userIcon');
-const mobileUserCollapsibleContent = document.getElementById('login');
-const mobileUserClose = document.getElementById('close');
-const body = document.getElementById('body');
-const nav = document.getElementById('nav');
-
-mobileUserCollapsible.addEventListener("click", function() {
-    if (mobileUserCollapsible.classList.contains('x') === false) {
-        mobileUserCollapsibleContent.setAttribute("style", "display: block");
-        body.setAttribute("style", "background: rgba(0, 0, 0, 0.4)");
-        mobileUserCollapsible.classList.add('x');
-    }
-    mobileUserClose.addEventListener("click", function() {
-        mobileUserCollapsibleContent.setAttribute("style", "display: none");
-        body.setAttribute("style", "background: inital");
-        mobileUserCollapsible.classList.remove('x');
-    });
-});
-
-/* Toggle Cart */
-const webCartCollapsible = document.getElementById('cartIcon');
-const webCartCollapsibleContent = document.getElementById('webCart');
-
-webCartCollapsible.addEventListener("click", function() {
-    if (window.innerWidth > 768) {
-        if (webCartCollapsible.classList.contains('x') === false) {
-            webCartCollapsibleContent.setAttribute("style", "display: block");
-            webCartCollapsible.classList.add('x');
-        }
-        else if (webCartCollapsible.classList.contains('x') === true) {
-            webCartCollapsibleContent.setAttribute("style", "display: none");
-            webCartCollapsible.classList.remove('x');
-        }
-    }
-});
-
-/* Dropdown Menu */
-const menDropShow = document.getElementById('mobileMen');
-const menDropShowContent = document.getElementById('mobileMenShow');
-const womenDropShow = document.getElementById('mobileWomen');
-const womenDropShowContent = document.getElementById('mobileWomenShow');
-const kidsDropShow = document.getElementById('mobileKids');
-const kidsDropShowContent = document.getElementById('mobileKidsShow');
-
-menDropShow.addEventListener("click", function() {
-    if (window.innerWidth <= 768) {
-        if (menDropShow.classList.contains('mobileDropDown') === false) {
-            menDropShowContent.setAttribute("style", "display: block;");
-            menDropShow.classList.add('mobileDropDown');
-        }
-        else if (menDropShow.classList.contains('mobileDropDown') === true) {
-            menDropShowContent.setAttribute("style", "display: none;");
-            menDropShow.classList.remove('mobileDropDown');
-        }
-    }
-}); 
-
-womenDropShow.addEventListener("click", function() {
-    if (window.innerWidth <= 768) {
-        if (womenDropShow.classList.contains('mobileDropDown') === false) {
-            womenDropShowContent.setAttribute("style", "display: block;");
-            womenDropShow.classList.add('mobileDropDown');
-        }
-        else if (womenDropShow.classList.contains('mobileDropDown') === true) {
-            womenDropShowContent.setAttribute("style", "display: none;");
-            womenDropShow.classList.remove('mobileDropDown');
-        }
-    }
-}); 
-
-kidsDropShow.addEventListener("click", function() {
-    if (window.innerWidth <= 768) {
-        if (kidsDropShow.classList.contains('mobileDropDown') === false) {
-            kidsDropShowContent.setAttribute("style", "display: block;");
-            kidsDropShow.classList.add('mobileDropDown');
-        }
-        else if (kidsDropShow.classList.contains('mobileDropDown') === true) {
-            kidsDropShowContent.setAttribute("style", "display: none;");
-            kidsDropShow.classList.remove('mobileDropDown');
-        }
-    }
-}); 
 
 /* Banner */
 const slideGallery = document.querySelector('.slides');
@@ -149,8 +159,7 @@ window.addEventListener('resize', changeWidth);
 
 function changeWidth() {
     if (window.innerWidth <= 768) {
-        slideWidth = window.innerWidth;
-        slideGallery.setAttribute("style", "width: window.innerWidth");
+        slideWidth = 400;
     }
     else {
         slideWidth = 1400;
